@@ -25,17 +25,17 @@ jobs:
           java-version: '21'
 
       - name: Install dependencies
-        run: npm install --force --legacy-peer-deps
+        run: |
+          npm install --force --legacy-peer-deps
+          npm install @capacitor/core @capacitor/cli @capacitor/android --save-dev
 
       - name: Build Web App
-        run: |
-          export CI=true
-          npx vite build --emptyOutDir
-          
+        run: npx vite build
+
       - name: Initialize & Sync Android Platform
         run: |
-          npx cap add android || true
-          npx cap sync android
+          npx @capacitor/cli add android || true
+          npx @capacitor/cli sync android
 
       - name: Build APK with Gradle
         run: |
