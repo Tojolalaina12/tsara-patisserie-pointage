@@ -1,0 +1,6 @@
+{
+  "name": "Tsara Pâtisserie - Pointage",
+  "description": "Application mobile de pointage d'arrivée et de départ pour Tsara Pâtisserie avec calcul du salaire horaire (500 Ar/h), gestion des boutiques, notifications et espace administration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
