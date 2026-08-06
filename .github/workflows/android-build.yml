@@ -28,8 +28,10 @@ jobs:
         run: npm install --force --legacy-peer-deps
 
       - name: Build Web App
-        run: npm run build
-
+        run: |
+          export CI=true
+          npx vite build --emptyOutDir
+          
       - name: Initialize & Sync Android Platform
         run: |
           npx cap add android || true
